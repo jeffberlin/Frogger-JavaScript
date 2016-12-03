@@ -1,6 +1,46 @@
 frontend-nanodegree-arcade-game
 ===============================
+About Project Game
+-
+Created this game for the Udacity JavaScript Frogger game project. This uses several files to run, including the images folder.
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+Object of the Game:
+-
+Use the key board arrows to get the player from the grass on the bottom of the screen, across the stones, to the water on top. Watch out for the bugs and sliding rocks though--they'll take your lives!
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+Scoring:
+-
+* Reaching top water: 100 pts
+* Collecting Gem Bonuses: 10 pts + their bonus
+* Collecting Heart Bonus: Adds one life
+
+Bonuses:
+-
+* Blue Gem: Eliminates one Flying Rock Enemy and adds 10 points
+* Orange Gem: Eliminates one Bug (no rocks) and adds 10 points
+* Green Gem: Slows down the enemies and adds 10 points
+* Heart: Life +1
+
+Enemies:
+-
+* Bugs
+* Flying Rocks
+
+How to get the game:
+=
+* Visit my GitHub [Link](https://github.com/jeffberlinrally88/FEND-arcade-game.git) or download the files
+* Find the index.html file
+* Open the file in the browser window to see the start screen
+* Enjoy!
+
+Starting the game:
+-
+From the startscreen, select numbers 1-4 on your keyboard to pick which player you want to use
+
+Gameplay:
+-
+Use the arrow keys (left, up, down, right) to manaveur around the screen. Avoid the bugs and flying rocks on the screen to get the player to the water on top of the screen (100 points). When you see the bonuses popping up on the screen, try and catch them to receive the benefit of them.
+
+Ending Game:
+-
+To end game and go back to the start screen--simply refresh the page, or presh F5.
