@@ -1,4 +1,4 @@
-frontend-nanodegree-arcade-game
+Front-end-nanodegree-arcade-game-project
 ===============================
 About Project Game
 -
@@ -35,12 +35,15 @@ How to get the game:
 
 Starting the game:
 -
-From the startscreen, select numbers 1-4 on your keyboard to pick which player you want to use
+From the startscreen, select numbers 1-4 on your keyboard to pick which character you want to use
 
-Gameplay:
--
+## Gameplay:
+
 Use the arrow keys (left, up, down, right) to manaveur around the screen. Avoid the bugs and flying rocks on the screen to get the player to the water on top of the screen (100 points). When you see the bonuses popping up on the screen, try and catch them to receive the benefit of them.
 
 Ending Game:
 -
 To end game and go back to the start screen--simply refresh the page, or presh F5.
+
+
+* Code help by Udacity instructors
