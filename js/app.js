@@ -149,7 +149,7 @@ EnemyRock.prototype.update = function(dt) {
 * @param {number} points
 * @param {string} lives
 */
-// Now write your own player class
+
 // This class requires an update(), render() and
 // a handleInput() method.
 var Player = function() {
@@ -355,7 +355,7 @@ BonusGemGreen.prototype = Object.create(Bonus.prototype);
 BonusGemGreen.prototype.constructor = BonusGemGreen;
 BonusGemGreen.prototype.makeProfit = function() {
     player.points += 10;
-  //slowdown all bugs
+  //slows down all bugs
   var len = allEnemies.length;
   for (i=0; i<len; i++) {
     allEnemies[i].accelerate(BONUS_SLOWDOWN_FACTOR);
@@ -395,13 +395,12 @@ var BonusHeart = function() {
 BonusHeart.prototype = Object.create(Bonus.prototype);
 BonusHeart.prototype.constructor = BonusHeart;
 BonusHeart.prototype.makeProfit = function() {
-  //add extra Life
+  //adds an extra Life
   player.lives += 1;
 };
 
-// Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
+// Places all enemy objects in an array called allEnemies
+// Places the player object in a variable called player
 var allEnemies = [];
 for (var i = 0; i < ENEMY_NUMBER; i++) {
   allEnemies.push(new Enemy());
@@ -416,7 +415,7 @@ var player = new Player();
 var allBonus = [];
 
 // This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
+// Player.handleInput() method.
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',
@@ -427,3 +426,4 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+// Credit Karol Davis (Udacity course coach) with help on writing this project
