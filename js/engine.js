@@ -65,11 +65,7 @@ var Engine = (function(global) {
         win.requestAnimationFrame(main);
     }
 
-
-
     function startScreen() {
-
-
 
       function handleInput(heroes, key) {
         playerSprite = heroes[key-1];
@@ -98,7 +94,7 @@ var Engine = (function(global) {
 
       ctx.font = "bold 20pt Verdana";
       ctx.fillStyle = "snow";
-      ctx.fillText("CHOOSE PLAYER (Press Number)", 4, 80);
+      ctx.fillText("CHOOSE PLAYER (Press 1-4)", 4, 80);
 
       var len = heroes.length;
       for (i=0; i<len; i++) {
