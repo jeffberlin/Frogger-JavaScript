@@ -28,9 +28,10 @@ Enemies:
 * Flying Rocks
 
 To Play:
+-
 * Click here: https://jeffberlin.github.io/Frogger-JavaScript/
 
-** Or download the files for yourself! (Read below)
+## Or download the files for yourself! (Read below)
 
 How to get the game:
 =
