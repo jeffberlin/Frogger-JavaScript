@@ -24,7 +24,7 @@ var playerSprite = 'images/char-boy.png';   //Default character
 /* ENEMIES FUNCTIONS */
 
 // Global var for 'enemy' speeds
-var ENEMY_NUMBER = 3;             // number of enemies
+
 var ENEMY_COLLISION_RADIUS = 50;  // radius the bug will make contact
 var ENEMY_DELAY_MAX = -300;       // max delay
 var ENEMY_DELAY_MIN = -50;        // min delay
@@ -61,7 +61,7 @@ Enemy.prototype.update = function(dt) {
 };
 
 // Global 'enemy rock' var
-var ENEMY_ROCK_NUMBER = 1;              // # of rocks to start
+
 var ENEMY_ROCK_SPEED_FACTOR = 1.5;      // speed for rocks
 var ENEMY_ROCK_COLLISION_RADIUS = 70;   // radius for rock contact
 
@@ -232,13 +232,7 @@ Player.prototype.update = function() {
     gameState = "AfterGame";
   }
 };
-/**
-* @description Basic bonus (gems/heart) class.
-* @class
-* @param {string} sprite
-* @param {number} x
-* @param {number} y
-*/
+/* Basic bonus (gems/heart) class */
 var Bonus = function() {
   this.sprite = 'images/Heart.png';
   this.x = Math.random() * (BONUS_X_MAX - BONUS_X_MIN) + BONUS_X_MIN;
@@ -251,20 +245,15 @@ var Bonus = function() {
 Bonus.prototype.render = function() {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y, 80, 140);
 };
-/**
-* @function
-* @description Manage collision
-*/
+
+/*  Manage collision */
 Bonus.prototype.update = function() {
   if ( Math.sqrt( Math.pow((this.x - player.x),2) + Math.pow((this.y - player.y),2) ) < BONUS_COLLISION_RADIUS ) {
     player.grab(this);
   }
 };
 
-/**
-* @description Subclass of "Benefit". Used to create blue gems
-* @class
-*/
+/*  Handles the blue gems */
 BonusGemBlue = function() {
   Bonus.call(this);
   this.sprite = 'images/Gem Blue.png';
@@ -283,10 +272,8 @@ BonusGemBlue.prototype.makeProfit = function() {
     }
   }
 };
-/**
-* @description Green Gem
-* @class
-*/
+
+/* Handles the Green Gems */
 var BonusGemGreen = function() {
   Bonus.call(this);
   this.sprite = 'images/Gem Green.png';
@@ -302,10 +289,8 @@ BonusGemGreen.prototype.makeProfit = function() {
     allEnemies[i].accelerate(BONUS_SLOWDOWN_FACTOR);
   }
 };
-/**
-* @description Orange gems
-* @class
-*/
+
+/* Handles the Orange gems */
 BonusGemOrange = function() {
   Bonus.call(this);
   this.sprite = 'images/Gem Orange.png';
@@ -324,10 +309,8 @@ BonusGemOrange.prototype.makeProfit = function() {
     }
   }
 };
-/**
-* @description Hearts
-* @class
-*/
+
+/* Handles the bonus Hearts */
 var BonusHeart = function() {
   Bonus.call(this);
   this.sprite = 'images/Heart.png';
@@ -340,9 +323,12 @@ BonusHeart.prototype.makeProfit = function() {
   player.lives += 1;
 };
 
-// Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
+/* Handles number of enemies and increases throughout game */
+
+// Global var for number's
+var ENEMY_NUMBER = 3;       // # of bugs
+var ENEMY_ROCK_NUMBER = 1;  // # of rocks
+
 var allEnemies = [];
 for (var i = 0; i < ENEMY_NUMBER; i++) {
   allEnemies.push(new Enemy());
@@ -357,7 +343,7 @@ var player = new Player();
 var allBonus = [];
 
 // This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
+// Player.handleInput() method
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',
