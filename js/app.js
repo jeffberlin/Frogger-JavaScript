@@ -24,7 +24,6 @@ var playerSprite = 'images/char-boy.png';   //Default character
 /* ENEMIES FUNCTIONS */
 
 // Global var for 'enemy' speeds
-
 var ENEMY_COLLISION_RADIUS = 50;  // radius the bug will make contact
 var ENEMY_DELAY_MAX = -300;       // max delay
 var ENEMY_DELAY_MIN = -50;        // min delay
@@ -61,7 +60,6 @@ Enemy.prototype.update = function(dt) {
 };
 
 // Global 'enemy rock' var
-
 var ENEMY_ROCK_SPEED_FACTOR = 1.5;      // speed for rocks
 var ENEMY_ROCK_COLLISION_RADIUS = 70;   // radius for rock contact
 
@@ -116,12 +114,14 @@ var Player = function() {
   this.points = 0;
   this.lives = PLAYER_LIVES;
 };
+
 /* In case of collision with an enemy - move player to initial position and decrease his lives */
 Player.prototype.collision = function() {
   this.x = PLAYER_START_X;
   this.y = PLAYER_START_Y;
   this.lives -= 1;
 };
+
 /* Manage what's happening when player grabs benefits */
 Player.prototype.grab = function(bonus) {
   // Apply benefit profit:
@@ -151,6 +151,7 @@ Player.prototype.handleInput = function(key) {
     this.y -= PLAYER_STEP;
   }
 };
+
 /* Draw player on screen */
 Player.prototype.render = function() {
   ctx.font = "15pt Verdana";
@@ -161,6 +162,7 @@ Player.prototype.render = function() {
   ctx.fillText("Lives: " + this.lives, 4, 105);
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
+
 /* Manage players lives and effects when player reaches water */
 Player.prototype.update = function() {
   function chooseRandomItem(probabilityList) {
@@ -232,16 +234,15 @@ Player.prototype.update = function() {
     gameState = "AfterGame";
   }
 };
+
 /* Basic bonus (gems/heart) class */
 var Bonus = function() {
   this.sprite = 'images/Heart.png';
   this.x = Math.random() * (BONUS_X_MAX - BONUS_X_MIN) + BONUS_X_MIN;
   this.y = Math.random() * (BONUS_Y_MAX - BONUS_Y_MIN) + BONUS_Y_MIN;
 };
-/**
-* @function
-* @description Draw bonus on the screen
-*/
+
+/*  Draw bonus on the screen */
 Bonus.prototype.render = function() {
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y, 80, 140);
 };

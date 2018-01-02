@@ -80,7 +80,7 @@ var Engine = (function(global) {
         }
       }
 
-      //Heroe choices
+      //Hero choices
       var heroes = [
         'images/char-boy.png',
         'images/char-cat-girl.png',
